@@ -59,7 +59,6 @@ public class MyFile {
 				brAnswer.close();
 			}catch (Exception e) {
 				System.out.println("open answerFile:" + answerFile + " error!");
-				e.printStackTrace();
 			}
 			brExerises.close();
 		} catch (Exception e) {
@@ -67,53 +66,4 @@ public class MyFile {
 		}
 	}
 	
-	/*
-	public static void answer() {
-		try {
-			BufferedReader brExerises = new BufferedReader(new FileReader(exercisesFile));
-			BufferedReader brAnswer = new BufferedReader(new FileReader(answerFile));
-			PrintWriter pw = new PrintWriter(gradeFile);
-//			do {
-//				brExerises.readLine()
-//			}while();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
-
-	public static void solve(String calc) {
-		Stack<Num> stNum = new Stack<Num>();
-		Stack<String> stOper = new Stack<String>();
-		ArrayList<String> c = getSymbols(calc);
-		Num num;
-		for(String s:c) {
-			if((num = Num.getNum(s)) != null) { //如果是一个操作数
-				stNum.push(num);
-			}
-		}
-		
-	}
-	
-	public static ArrayList<String> getSymbols(String calc) {
-		ArrayList<String> s = new ArrayList<String>();
-		String tmp = "";
-		char c;
-		for(int n = 0;n < calc.length();n++) {
-			c = calc.charAt(n);
-			if(c >= 48 && c <= 57 || c == '\'' || c == '/') {//如果一位数字,先放进tmp，
-				tmp += String.valueOf(calc.charAt(n));
-				continue;
-			}
-			if(!tmp.equals("")) {//把前面的一个数add进去
-				s.add(tmp);
-				tmp = "";
-			}
-			s.add(calc.substring(n,n+1));
-		}
-		if(!tmp.equals("")) {//如果最后是一个数字，add进去
-			s.add(tmp);
-			tmp = "";
-		}
-		return s;
-	}*/
 }

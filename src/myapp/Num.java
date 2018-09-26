@@ -35,35 +35,16 @@ class Num{
     private Num(int[] num) {
         this.num = num.clone();
     }
-    
-    public static Num getNum(String s) {
-    	int[] num = new int[]{0,0,0};
-    	try {
-	    	if(s.indexOf('\'') != -1) { //如果有带分数
-	    		num[0] = Integer.valueOf(s.split("'")[0]);
-	    		s = s.substring(s.indexOf('\'') + 1);
-	    	}
-	    	if(s.indexOf('/') != -1) { //如果是分数
-	    		num[1] = Integer.valueOf(s.split("/")[0]);
-	    		num[2] = Integer.valueOf(s.split("/")[1]);
-	    	}else {
-	    		num[0] = Integer.valueOf(s);
-	    	}
-	    	return new Num(num);
-    	}catch (Exception e) {
-    		return null;
-    	}
-    }
-    
+
     public boolean equals(Num o) {
-        return (num[0] == o.num[0]) && (num[1] == o.num[1]) && (num[2] == o.num[2]);
+    	if((num[0] == o.num[0]) && (num[1] == o.num[1]) && (num[2] == o.num[2])) {
+    		return true;
+    	}
+        return false;
     }
 
     public String getFromatNumber() {
         String str = new String();
-
-        //str += String.valueOf(num[0]) + "/" + String.valueOf(num[1]) + "/" + String.valueOf(num[2]) + "XXX ";
-
         if(num[2] == 0) {
             str += String.valueOf(num[0]);
         } else {
@@ -100,8 +81,6 @@ class Num{
     }
 
     public Num add(Num other) {
-        if(other == null)
-            return null;
         int[] a = reduction(this);
         int[] b = reduction(other);
 
@@ -120,8 +99,6 @@ class Num{
     }
 
     public Num sub(Num other) {
-        if(other == null)
-            return null;
         int[] a = reduction(this);
         int[] b = reduction(other);
 
@@ -142,8 +119,6 @@ class Num{
     }
 
     public Num multiply(Num other) {
-        if(other == null)
-            return null;
         int[] a = reduction(this);
         int[] b = reduction(other);
 
@@ -162,8 +137,6 @@ class Num{
     }
 
     public Num divide(Num other) {
-        if(other == null)
-            return null;
         int[] a = reduction(this);
         int[] b = reduction(other);
 

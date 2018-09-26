@@ -87,14 +87,6 @@ public class Myapp {
         }
 		MyFile.writeInCalc(s);
 	}
-
-	public void answer() {
-		
-	}
-	
-	public static void main(String[] args) {
-		Myapp a = new Myapp(new String[] {"-e","d:/Exercises.txt" ,"-a" , "D:\\Answer.txt"});
-	}
 	
 }
 

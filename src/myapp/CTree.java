@@ -12,17 +12,17 @@ class CTree { //Calculation tree
     public Num getAnswer() {
         if(isNumber())
             return num;
-        if(lchild == null || lchild.getAnswer() == null)
-            return null;
-        switch (operationType){
-            case 0:
-                return lchild.getAnswer().add(rchild.getAnswer());
-            case 1:
-                return lchild.getAnswer().sub(rchild.getAnswer());
-            case 2:
-                return lchild.getAnswer().multiply(rchild.getAnswer());
-            case 3:
-                return lchild.getAnswer().divide(rchild.getAnswer());
+        if(lchild != null && lchild.getAnswer() != null){
+        	switch (operationType){
+	            case 0:
+	                return lchild.getAnswer().add(rchild.getAnswer());
+	            case 1:
+	                return lchild.getAnswer().sub(rchild.getAnswer());
+	            case 2:
+	                return lchild.getAnswer().multiply(rchild.getAnswer());
+	            case 3:
+	                return lchild.getAnswer().divide(rchild.getAnswer());
+	        }
         }
         return null;
     }
@@ -52,14 +52,10 @@ class CTree { //Calculation tree
     }
 
     public boolean equals(CTree s) { //比较树是否相同 ,不区分左右子树位置不同
-        if(s == null) {
-            return false;
-        }
         if(isNumber() != s.isNumber()) {
             return false;
         }
         if(isNumber() == true) {
-            //System.out.println(this.getFormula() + " cmp " + s.getFormula());
             return num.equals(s.num);
         }
         if(operationType != s.operationType) {
