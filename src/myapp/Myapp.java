@@ -88,5 +88,8 @@ public class Myapp {
 		MyFile.writeInCalc(s);
 	}
 	
+	public static void main(String[] args) {
+		new Myapp(args);
+	}
 }
 

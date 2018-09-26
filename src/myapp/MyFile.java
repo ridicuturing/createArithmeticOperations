@@ -14,8 +14,8 @@ public class MyFile {
 	
 	public static void writeInCalc(Set<Calculation> s) {
 		try {
-			PrintWriter pwExerises = new PrintWriter(exercisesFile);
-			PrintWriter pwAnswer = new PrintWriter(answerFile);
+			PrintWriter pwExerises = new PrintWriter(exercisesFile,"UTF-8");
+			PrintWriter pwAnswer = new PrintWriter(answerFile,"UTF-8");
 			int n = 1;
 			for(Calculation c :s) {
 				pwExerises.println(n + ". " + c.getFormula() + " = ");
@@ -23,7 +23,7 @@ public class MyFile {
 			}
 			pwExerises.close();
 			pwAnswer.close();
-		} catch (FileNotFoundException e) {
+		} catch (Exception e) {
 			System.out.println("open file error!");
 		}
 	}
@@ -33,7 +33,7 @@ public class MyFile {
 			BufferedReader brExerises = new BufferedReader(new FileReader(exercisesFile));
 			try {
 				BufferedReader brAnswer = new BufferedReader(new FileReader(answerFile));
-				PrintWriter pw = new PrintWriter(gradeFile);
+				PrintWriter pw = new PrintWriter(gradeFile,"UTF-8");
 				int rightNum = 0, wrongNum = 0;
 				String right = "";
 				String wrong = "";
