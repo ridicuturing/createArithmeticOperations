@@ -41,7 +41,7 @@ public class Myapp {
 						MyFile.exercisesFile = args[n];
 						hasE = true;
 					}else {
-						System.out.println("e参数错误,后面没有带数字");
+						System.out.println("e参数错误");
 					}
 					break;
 				case "-a":
@@ -49,7 +49,7 @@ public class Myapp {
 						MyFile.answerFile = args[n];
 						hasA = true;
 					}else {
-						System.out.println("a参数错误,后面没有带数字");
+						System.out.println("a参数错误");
 					}
 					break;
 				}

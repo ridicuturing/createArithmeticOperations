@@ -19,7 +19,7 @@ class Calculation {
     }
 
     public int hashCode() {
-        return formula.hashCode();
+        return tree.getAnswer().getFromatNumber().hashCode();
     }
 
     public boolean equals(Object obj) {
