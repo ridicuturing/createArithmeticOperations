@@ -53,12 +53,12 @@ public class Myapp {
 					}
 					break;
 				}
-				if(hasE && hasA) {
-					MyFile.grade();
-				}
-				if(createCalc) {
-					createCalc();
-				}
+			}
+			if(hasE && hasA) {
+				MyFile.grade();
+			}
+			if(createCalc) {
+				createCalc();
 			}
 		}catch (Exception e) {
 			System.out.println("参数错误");
@@ -87,7 +87,7 @@ public class Myapp {
         }
 		MyFile.writeInCalc(s);
 	}
-	
+
 	public static void main(String[] args) {
 		new Myapp(args);
 	}
